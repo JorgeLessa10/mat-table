@@ -68,9 +68,11 @@ export class TableComponent implements AfterViewInit {
 }
 
 function createNewTeam(id: number): TeamData {
-  const description = DESCRIPTIONS[Math.round(Math.random() * (DESCRIPTIONS.length - 1))];
 
-  return {
+  const description = DESCRIPTIONS[Math.round(Math.random() * (DESCRIPTIONS.length - 1))] + ' ' + 
+    DESCRIPTIONS[Math.round(Math.random() * (DESCRIPTIONS.length - 1))].charAt(0) + '.';
+  
+    return {
     id: id.toString(),
     description: description,
   };
